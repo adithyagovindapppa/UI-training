@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./flex.css">
+</head>
+<body>
+    <h1>Numbers from 1 to 55, where numbers divisible by 4 are replaced by 'fourDiv' and numbers divisible by 7 are replaced by 'sevDiv'</h1>
+    <ul class="chat" id="list"> </ul>
+    <script>
+        var number=[];
+        for(let i=1; i<=55; i++){
+           if(i%4==0 ){
+            number.push('fourdiv')
+           }
+           else if(i%7==0){
+            number.push('sevdiv')
+           }
+           else{
+            number.push(i)
+           }
+        }
+        console.log(number);
+        let list=document.getElementById("list");
+        number.forEach((num) => {
+            let li = document.createElement('li');
+            li.innerHTML = num;
+            list.appendChild(li);
+        })
+    </script>
+</body>
+</html>
